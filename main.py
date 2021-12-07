@@ -1,6 +1,7 @@
 import pandas as pd
 from pandas.core.frame import DataFrame
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as ElTr
+import xml.dom.minidom
 from collections import OrderedDict
 import re
 
@@ -10,6 +11,7 @@ DEBUG_MODE = False
 class Route:
     def __init__(self, line_in_excel):
         self._line_in_excel = line_in_excel
+        self.id = line_in_excel-1
         self.route_tag = None
         self._route_type = None
         self._signal_tag = None
@@ -229,7 +231,7 @@ if DEBUG_MODE:
     print(bool("0"))
     print(re.findall(r"[+-]\d{1,3}S?[OB]?", "-309 -1SB +1 +3 +5 +305 +303"))
 else:
-    dataframe: DataFrame = pd.read_excel('TrainRoute.xlsx')
+    dataframe: DataFrame = pd.read_excel('TrainRoute.xlsx', dtype='string')
     dataframe = dataframe.fillna("")
     for row in dataframe.iterrows():
         row_index = int(row[0])
@@ -240,36 +242,102 @@ else:
         routes.append(route)
 
 for route in routes:
-    print("route", route.route_tag)
+    if not (route.route_points_before_route is None):
+        print("route", route.route_points_before_route)
 
 # 2. List of routes to xml
 
 
-# tree = ET.parse('test.xml')
-# root = tree.getroot()
-# print(root.tag, root.attrib)
-# for child in root:
-#     print(child.tag, child.attrib)
-# print(root[0][1].text)
-# for neighbor in root.iter('neighbor'):
-#     print(neighbor.attrib)
-# for country in root.findall('country'):
-#     rank = country.find('rank').text
-#     name = country.get('name')
-#     print(name, rank)
-# for rank in root.iter('rank'):
-#     new_rank = int(rank.text) + 2
-#     rank.text = str(new_rank)
-#     rank.set('updated', 'yes')
-#
-# tree.write('output.xml')
-#
-# a = ET.Element('a')
-# b = ET.SubElement(a, 'b')
-# c = ET.SubElement(a, 'c')
-# d = ET.SubElement(c, 'd')
-# ET.dump(a)
+def form_route_element(signal_element, route) -> ElTr.Element:
+    if route.route_type == "PpoTrainRoute":
+        route_element = ElTr.SubElement(signal_element, 'TrRoute')
+    else:
+        route_element = ElTr.SubElement(signal_element, 'ShRoute')
+    route_element.set("Tag", route.route_tag)
+    route_element.set("Type", route.route_type)
+    if route.route_pointer_value:
+        route_element.set("ValueRoutePointer", route.route_pointer_value)
+    trace_element = ElTr.SubElement(route_element, 'Trace')
+    trace_element.set("Start", route.trace_begin)
+    trace_element.set("OnCoursePoints", route.trace_points)
+    trace_element.set("Finish", route.trace_end)
+    if route.route_type == "PpoTrainRoute" and route.trace_variants:
+        trace_element.set("Variants", route.trace_variants)
+    selectors_element = ElTr.SubElement(route_element, 'OperatorSelectors')
+    selectors_element.set("Ends", route.end_selectors)
+    if route.route_type == "PpoTrainRoute":
+        dependence_element = ElTr.SubElement(route_element, 'SignalingDependence')
+        dependence_element.set("Dark", route.next_dark)
+        dependence_element.set("Stop", route.next_stop)
+        dependence_element.set("OnMain", route.next_on_main)
+        dependence_element.set("OnMainGreen", route.next_on_main_green)
+        dependence_element.set("OnSide", route.next_on_side)
+        dependence_element.set("OnMainALSO", route.next_also_on_main)
+        dependence_element.set("OnMainGrALSO", route.next_also_on_main_green)
+        dependence_element.set("OnSideALSO", route.next_also_on_side)
+        if route.route_points_before_route:
+            before_route_element = ElTr.SubElement(route_element, 'PointsAnDTrack')
+            before_route_element.set("Points", route.route_points_before_route)
+    return route_element
 
-# if DEBUG_MODE:
 
+if DEBUG_MODE:
+    a = ElTr.Element('a')
+    b = ElTr.SubElement(a, 'b')
+    c = ElTr.SubElement(a, 'c')
+    d = ElTr.SubElement(c, 'd')
+    xmlstr = xml.dom.minidom.parseString(ElTr.tostring(a)).toprettyxml()
+    with open('output.xml', 'w', encoding='utf-8') as out:
+        out.write(xmlstr)
+else:
+    train_routes_dict = OrderedDict()
+    shunt_trs_routes_dict = OrderedDict()
+    shunt_shs_routes_dict = OrderedDict()
+    for route in routes:
+        st = route.signal_tag
+        if route.route_type == "PpoTrainRoute":
+            if st not in train_routes_dict:
+                train_routes_dict[st] = []
+            train_routes_dict[st].append(route)
+        elif route.signal_type == "PpoTrainSignal":
+            if st not in shunt_trs_routes_dict:
+                shunt_trs_routes_dict[st] = []
+            shunt_trs_routes_dict[st].append(route)
+        else:
+            if st not in shunt_shs_routes_dict:
+                shunt_shs_routes_dict[st] = []
+            shunt_shs_routes_dict[st].append(route)
+
+    # print(len(unique_signals_list), unique_signals_list)
+    # print(len(train_signals_list), train_signals_list)
+    # print(len(shunting_signals_list), shunting_signals_list)
+    train_route_element = ElTr.Element('Routes')
+    shunt_route_element = ElTr.Element('Routes')
+    # print("len train signal", len(train_routes_dict))
+    # print("len shunt train signal", len(shunt_trs_routes_dict))
+    for train_signal in train_routes_dict:
+        signal_element = ElTr.SubElement(train_route_element, 'TrainSignal')
+        signal_element.set("Tag", train_signal)
+        signal_element.set("Type", "PpoTrainSignal")
+        for route in train_routes_dict[train_signal]:
+            form_route_element(signal_element, route)
+        if train_signal in shunt_trs_routes_dict:
+            for route in shunt_trs_routes_dict[train_signal]:
+                form_route_element(signal_element, route)
+    for shunt_signal in shunt_shs_routes_dict:
+        signal_element = ElTr.SubElement(shunt_route_element, 'ShuntingSignal')
+        signal_element.set("Tag", shunt_signal)
+        signal_element.set("Type", "PpoShuntingSignal")
+        for route in shunt_shs_routes_dict[shunt_signal]:
+            form_route_element(signal_element, route)
+
+    # for shunt_train_signal in shunt_trs_routes_dict:
+    #     print("shunt_train_signal", shunt_train_signal)
+
+    xmlstr_train = xml.dom.minidom.parseString(ElTr.tostring(train_route_element)).toprettyxml()
+    with open('train_routes.xml', 'w', encoding='utf-8') as out:
+        out.write(xmlstr_train)
+    xmlstr_shunt = xml.dom.minidom.parseString(ElTr.tostring(shunt_route_element)).toprettyxml()
+    with open('shunt_routes.xml', 'w', encoding='utf-8') as out:
+        out.write(xmlstr_shunt)
 

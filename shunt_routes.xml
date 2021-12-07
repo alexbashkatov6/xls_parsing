@@ -1,0 +1,823 @@
+<?xml version="1.0" ?>
+<Routes>
+	<ShuntingSignal Tag="M101" Type="PpoShuntingSignal">
+		<ShRoute Tag="M101_M105" Type="PpoShuntingRoute">
+			<Trace Start="M101" OnCoursePoints="" Finish="M105"/>
+			<OperatorSelectors Ends="M103 M105"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M103" Type="PpoShuntingSignal">
+		<ShRoute Tag="M103_M101" Type="PpoShuntingRoute">
+			<Trace Start="M103" OnCoursePoints="" Finish="M101P"/>
+			<OperatorSelectors Ends="M101"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M105" Type="PpoShuntingSignal">
+		<ShRoute Tag="M105_M109" Type="PpoShuntingRoute">
+			<Trace Start="M105" OnCoursePoints="+101" Finish="M109P"/>
+			<OperatorSelectors Ends="M109"/>
+		</ShRoute>
+		<ShRoute Tag="M105_M113" Type="PpoShuntingRoute">
+			<Trace Start="M105" OnCoursePoints="-101 -103" Finish="M113"/>
+			<OperatorSelectors Ends="M111 M113"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M107" Type="PpoShuntingSignal">
+		<ShRoute Tag="M107_M113" Type="PpoShuntingRoute">
+			<Trace Start="M107" OnCoursePoints="+103" Finish="M113"/>
+			<OperatorSelectors Ends="M111 M113"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M109" Type="PpoShuntingSignal">
+		<ShRoute Tag="M109_M103" Type="PpoShuntingRoute">
+			<Trace Start="M109" OnCoursePoints="+101" Finish="M103"/>
+			<OperatorSelectors Ends="M103 M105"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M111" Type="PpoShuntingSignal">
+		<ShRoute Tag="M111_M107" Type="PpoShuntingRoute">
+			<Trace Start="M111" OnCoursePoints="+103" Finish="NSHAP"/>
+			<OperatorSelectors Ends="M107"/>
+		</ShRoute>
+		<ShRoute Tag="M111_M103" Type="PpoShuntingRoute">
+			<Trace Start="M111" OnCoursePoints="-103 -101" Finish="M103"/>
+			<OperatorSelectors Ends="M103 M105"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M113" Type="PpoShuntingSignal">
+		<ShRoute Tag="M113_M123" Type="PpoShuntingRoute">
+			<Trace Start="M113" OnCoursePoints="+107 +109" Finish="M123"/>
+			<OperatorSelectors Ends="M123"/>
+		</ShRoute>
+		<ShRoute Tag="M113_M306" Type="PpoShuntingRoute">
+			<Trace Start="M113" OnCoursePoints="-107" Finish="M306"/>
+			<OperatorSelectors Ends="M306 M119"/>
+		</ShRoute>
+		<ShRoute Tag="M113_NML3" Type="PpoShuntingRoute">
+			<Trace Start="M113" OnCoursePoints="+107 -109 -111 +113" Finish="3LP"/>
+			<OperatorSelectors Ends="NML3 CHL3"/>
+		</ShRoute>
+		<ShRoute Tag="M113_M114" Type="PpoShuntingRoute">
+			<Trace Start="M113" OnCoursePoints="+107 -109 -111 -113 -117" Finish="M114"/>
+			<OperatorSelectors Ends="M114 CHL4"/>
+		</ShRoute>
+		<ShRoute Tag="M113_M116" Type="PpoShuntingRoute">
+			<Trace Start="M113" OnCoursePoints="+107 -109 -111 -113 +117 -119" Finish="M116"/>
+			<OperatorSelectors Ends="M127 M116"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M115" Type="PpoShuntingSignal">
+		<ShRoute Tag="M115_M117" Type="PpoShuntingRoute">
+			<Trace Start="M115" OnCoursePoints="+105" Finish="M117"/>
+			<OperatorSelectors Ends="M117"/>
+		</ShRoute>
+		<ShRoute Tag="M115_M121" Type="PpoShuntingRoute">
+			<Trace Start="M115" OnCoursePoints="-105" Finish="M121"/>
+			<OperatorSelectors Ends="M121"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M117" Type="PpoShuntingSignal">
+		<ShRoute Tag="M117_M115" Type="PpoShuntingRoute">
+			<Trace Start="M117" OnCoursePoints="+105" Finish="M115"/>
+			<OperatorSelectors Ends="M115"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M119" Type="PpoShuntingSignal">
+		<ShRoute Tag="M119_M111" Type="PpoShuntingRoute">
+			<Trace Start="M119" OnCoursePoints="-107" Finish="M111"/>
+			<OperatorSelectors Ends="M111 M113"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M121" Type="PpoShuntingSignal">
+		<ShRoute Tag="M121_NML3" Type="PpoShuntingRoute">
+			<Trace Start="M121" OnCoursePoints="+111 +113" Finish="3LP"/>
+			<OperatorSelectors Ends="NML3 CHL3"/>
+		</ShRoute>
+		<ShRoute Tag="M121_M114" Type="PpoShuntingRoute">
+			<Trace Start="M121" OnCoursePoints="+111 -113 -117" Finish="M114"/>
+			<OperatorSelectors Ends="M114 CHL4"/>
+		</ShRoute>
+		<ShRoute Tag="M121_M116" Type="PpoShuntingRoute">
+			<Trace Start="M121" OnCoursePoints="+111 -113 +117 -119" Finish="M116"/>
+			<OperatorSelectors Ends="M116 M127"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M123" Type="PpoShuntingSignal">
+		<ShRoute Tag="M123_NML2" Type="PpoShuntingRoute">
+			<Trace Start="M123" OnCoursePoints="+115" Finish="2LP"/>
+			<OperatorSelectors Ends="NML2 CHL2"/>
+		</ShRoute>
+		<ShRoute Tag="M123_NML1" Type="PpoShuntingRoute">
+			<Trace Start="M123" OnCoursePoints="-115" Finish="1LP"/>
+			<OperatorSelectors Ends="NML1 CHL1"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M125" Type="PpoShuntingSignal">
+		<ShRoute Tag="M125_M116" Type="PpoShuntingRoute">
+			<Trace Start="M125" OnCoursePoints="+119" Finish="M116"/>
+			<OperatorSelectors Ends="M116 M127"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M127" Type="PpoShuntingSignal">
+		<ShRoute Tag="M127_M125" Type="PpoShuntingRoute">
+			<Trace Start="M127" OnCoursePoints="+119" Finish="M125"/>
+			<OperatorSelectors Ends="M125"/>
+		</ShRoute>
+		<ShRoute Tag="M127_M115" Type="PpoShuntingRoute">
+			<Trace Start="M127" OnCoursePoints="-105 +111 -113 +117 -119" Finish="M115"/>
+			<OperatorSelectors Ends="M115"/>
+		</ShRoute>
+		<ShRoute Tag="M127_M111" Type="PpoShuntingRoute">
+			<Trace Start="M127" OnCoursePoints="+107 -109 -111 -113 +117 -119" Finish="M111"/>
+			<OperatorSelectors Ends="M111 M113"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M102" Type="PpoShuntingSignal">
+		<ShRoute Tag="M102_NV3" Type="PpoShuntingRoute">
+			<Trace Start="M102" OnCoursePoints="+203 +205" Finish="3VP"/>
+			<OperatorSelectors Ends="NV3 CHMV3"/>
+		</ShRoute>
+		<ShRoute Tag="M102_NV4" Type="PpoShuntingRoute">
+			<Trace Start="M102" OnCoursePoints="+203 -205 -207" Finish="4VP"/>
+			<OperatorSelectors Ends="NV4 CHMV4"/>
+		</ShRoute>
+		<ShRoute Tag="M102_M201" Type="PpoShuntingRoute">
+			<Trace Start="M102" OnCoursePoints="+203 -205 +207" Finish="M201"/>
+			<OperatorSelectors Ends="M201"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M104" Type="PpoShuntingSignal">
+		<ShRoute Tag="M104_M108" Type="PpoShuntingRoute">
+			<Trace Start="M104" OnCoursePoints="-106 -108 +110" Finish="M108"/>
+			<OperatorSelectors Ends="M108"/>
+		</ShRoute>
+		<ShRoute Tag="M104_CHL1" Type="PpoShuntingRoute">
+			<Trace Start="M104" OnCoursePoints="-106 -108 -110 -112" Finish="1LP"/>
+			<OperatorSelectors Ends="CHL1 NML1"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M106" Type="PpoShuntingSignal">
+		<ShRoute Tag="M106_M108" Type="PpoShuntingRoute">
+			<Trace Start="M106" OnCoursePoints="+106 -108 +110" Finish="M108"/>
+			<OperatorSelectors Ends="M108"/>
+		</ShRoute>
+		<ShRoute Tag="M106_CHL1" Type="PpoShuntingRoute">
+			<Trace Start="M106" OnCoursePoints="+106 -108 -110 -112" Finish="1LP"/>
+			<OperatorSelectors Ends="CHL1 NML1"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M108" Type="PpoShuntingSignal">
+		<ShRoute Tag="M108_M104" Type="PpoShuntingRoute">
+			<Trace Start="M108" OnCoursePoints="-106 -108 +110" Finish="M104"/>
+			<OperatorSelectors Ends="M104"/>
+		</ShRoute>
+		<ShRoute Tag="M108_M106" Type="PpoShuntingRoute">
+			<Trace Start="M108" OnCoursePoints="+106 -108 +110" Finish="M106"/>
+			<OperatorSelectors Ends="M106"/>
+		</ShRoute>
+		<ShRoute Tag="M108_M324" Type="PpoShuntingRoute">
+			<Trace Start="M108" OnCoursePoints="+110 +108 -338" Finish="M324"/>
+			<OperatorSelectors Ends="M324"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M110" Type="PpoShuntingSignal">
+		<ShRoute Tag="M110_CHL1" Type="PpoShuntingRoute">
+			<Trace Start="M110" OnCoursePoints="+112" Finish="1LP"/>
+			<OperatorSelectors Ends="CHL1 NML1"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M112" Type="PpoShuntingSignal">
+		<ShRoute Tag="M112_CHL4" Type="PpoShuntingRoute">
+			<Trace Start="M112" OnCoursePoints="+114" Finish="4LP"/>
+			<OperatorSelectors Ends="M114 CHL4"/>
+		</ShRoute>
+		<ShRoute Tag="M112_M127" Type="PpoShuntingRoute">
+			<Trace Start="M112" OnCoursePoints="-114" Finish="M127"/>
+			<OperatorSelectors Ends="M127 M116"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M114" Type="PpoShuntingSignal">
+		<ShRoute Tag="M114_NML4" Type="PpoShuntingRoute">
+			<Trace Start="M114" OnCoursePoints="+114" Finish="4LP"/>
+			<OperatorSelectors Ends="M112 NML4"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M201" Type="PpoShuntingSignal">
+		<ShRoute Tag="M201_M205" Type="PpoShuntingRoute">
+			<Trace Start="M201" OnCoursePoints="+209 +211 +213" Finish="M205"/>
+			<OperatorSelectors Ends="M205"/>
+		</ShRoute>
+		<ShRoute Tag="M201_CHMV5" Type="PpoShuntingRoute">
+			<Trace Start="M201" OnCoursePoints="-209" Finish="5VP"/>
+			<OperatorSelectors Ends="CHMV5 NV5"/>
+		</ShRoute>
+		<ShRoute Tag="M201_CHMV6" Type="PpoShuntingRoute">
+			<Trace Start="M201" OnCoursePoints="+209 -211" Finish="6VP"/>
+			<OperatorSelectors Ends="CHMV6 NV6"/>
+		</ShRoute>
+		<ShRoute Tag="M201_CHMV7" Type="PpoShuntingRoute">
+			<Trace Start="M201" OnCoursePoints="+209 +211 -213" Finish="7VP"/>
+			<OperatorSelectors Ends="CHMV7 NV7"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M203" Type="PpoShuntingSignal">
+		<ShRoute Tag="M203_NV1" Type="PpoShuntingRoute">
+			<Trace Start="M203" OnCoursePoints="-215 -217SO" Finish="1VP"/>
+			<OperatorSelectors Ends="NV1 M209"/>
+		</ShRoute>
+		<ShRoute Tag="M203_NV2" Type="PpoShuntingRoute">
+			<Trace Start="M203" OnCoursePoints="+215" Finish="2VP"/>
+			<OperatorSelectors Ends="NV2 M207"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M205" Type="PpoShuntingSignal">
+		<ShRoute Tag="M205_M212" Type="PpoShuntingRoute">
+			<Trace Start="M205" OnCoursePoints="+219" Finish="M212"/>
+			<OperatorSelectors Ends="M212 M213"/>
+		</ShRoute>
+		<ShRoute Tag="M205_M211" Type="PpoShuntingRoute">
+			<Trace Start="M205" OnCoursePoints="-219 -3SB" Finish="M211"/>
+			<OperatorSelectors Ends="M211"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M207" Type="PpoShuntingSignal">
+		<ShRoute Tag="M207_CHMV2" Type="PpoShuntingRoute">
+			<Trace Start="M207" OnCoursePoints="+215" Finish="2VP"/>
+			<OperatorSelectors Ends="CHMV2 M203"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M209" Type="PpoShuntingSignal">
+		<ShRoute Tag="M209_CHMV2" Type="PpoShuntingRoute">
+			<Trace Start="M209" OnCoursePoints="-217SO -215" Finish="2VP"/>
+			<OperatorSelectors Ends="CHMV2 M203"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M211" Type="PpoShuntingSignal">
+		<ShRoute Tag="M211_M110" Type="PpoShuntingRoute">
+			<Trace Start="M211" OnCoursePoints="-3SB -219 +213 +211 +209 +207 -205 +203" Finish="M110"/>
+			<OperatorSelectors Ends="M110 M102"/>
+		</ShRoute>
+		<ShRoute Tag="M211_CHL2" Type="PpoShuntingRoute">
+			<Trace Start="M211" OnCoursePoints="-3SB -219 +213 +211 +209 +207 -205 -203 -201 +102" Finish="2LP"/>
+			<OperatorSelectors Ends="CHL2 NML2"/>
+		</ShRoute>
+		<ShRoute Tag="M211_CHL3" Type="PpoShuntingRoute">
+			<Trace Start="M211" OnCoursePoints="-3SB -219 +213 +211 +209 +207 -205 -203 -201 -102 +104" Finish="3LP"/>
+			<OperatorSelectors Ends="CHL3 NML3"/>
+		</ShRoute>
+		<ShRoute Tag="M211_M112" Type="PpoShuntingRoute">
+			<Trace Start="M211" OnCoursePoints="-3SB -219 +213 +211 +209 +207 -205 -203 -201 -102 -104" Finish="M112"/>
+			<OperatorSelectors Ends="M112 NML4"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M213" Type="PpoShuntingSignal">
+		<ShRoute Tag="M213_M110" Type="PpoShuntingRoute">
+			<Trace Start="M213" OnCoursePoints="+219 +213 +211 +209 +207 -205 +203" Finish="M110"/>
+			<OperatorSelectors Ends="M110 M102"/>
+		</ShRoute>
+		<ShRoute Tag="M213_CHL2" Type="PpoShuntingRoute">
+			<Trace Start="M213" OnCoursePoints="+219 +213 +211 +209 +207 -205 -203 -201 +102" Finish="2LP"/>
+			<OperatorSelectors Ends="CHL2 NML2"/>
+		</ShRoute>
+		<ShRoute Tag="M213_CHL3" Type="PpoShuntingRoute">
+			<Trace Start="M213" OnCoursePoints="+219 +213 +211 +209 +207 -205 -203 -201 -102 +104" Finish="3LP"/>
+			<OperatorSelectors Ends="CHL3 NML3"/>
+		</ShRoute>
+		<ShRoute Tag="M213_M112" Type="PpoShuntingRoute">
+			<Trace Start="M213" OnCoursePoints="+219 +213 +211 +209 +207 -205 -203 -201 -102 -104" Finish="M112"/>
+			<OperatorSelectors Ends="M112 NML4"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M202" Type="PpoShuntingSignal">
+		<ShRoute Tag="M202_M206" Type="PpoShuntingRoute">
+			<Trace Start="M202" OnCoursePoints="+202 -206" Finish="M206"/>
+			<OperatorSelectors Ends="M206"/>
+		</ShRoute>
+		<ShRoute Tag="M202_M210" Type="PpoShuntingRoute">
+			<Trace Start="M202" OnCoursePoints="+202 +206" Finish="M210"/>
+			<OperatorSelectors Ends="M210"/>
+		</ShRoute>
+		<ShRoute Tag="M202_CHMV6" Type="PpoShuntingRoute">
+			<Trace Start="M202" OnCoursePoints="-202 -204 +208 +210 +220" Finish="6VP"/>
+			<OperatorSelectors Ends="CHMV6 NV6"/>
+		</ShRoute>
+		<ShRoute Tag="M202_CHMV7" Type="PpoShuntingRoute">
+			<Trace Start="M202" OnCoursePoints="-202 -204 +208 +210 -220" Finish="7VP"/>
+			<OperatorSelectors Ends="CHMV7 NV7"/>
+		</ShRoute>
+		<ShRoute Tag="M202_M213" Type="PpoShuntingRoute">
+			<Trace Start="M202" OnCoursePoints="-202 -204 +208 -210 -218SO -222" Finish="8VP"/>
+			<OperatorSelectors Ends="M212 M213"/>
+		</ShRoute>
+		<ShRoute Tag="M202_M214" Type="PpoShuntingRoute">
+			<Trace Start="M202" OnCoursePoints="-202 -204 +208 -210 -218SO +222 +224" Finish="M214"/>
+			<OperatorSelectors Ends="M214"/>
+		</ShRoute>
+		<ShRoute Tag="M202_M216" Type="PpoShuntingRoute">
+			<Trace Start="M202" OnCoursePoints="-202 -204 +208 -210 -218SO +222 -224 +228" Finish="M216"/>
+			<OperatorSelectors Ends="M216"/>
+		</ShRoute>
+		<ShRoute Tag="M202_M218" Type="PpoShuntingRoute">
+			<Trace Start="M202" OnCoursePoints="-202 -204 +208 -210 -218SO +222 -224 -228" Finish="M218"/>
+			<OperatorSelectors Ends="M218"/>
+		</ShRoute>
+		<ShRoute Tag="M202_M303" Type="PpoShuntingRoute">
+			<Trace Start="M202" OnCoursePoints="-202 -204 -208" Finish="M303"/>
+			<OperatorSelectors Ends="M303 M208"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M204" Type="PpoShuntingSignal">
+		<ShRoute Tag="M204_CHMV6" Type="PpoShuntingRoute">
+			<Trace Start="M204" OnCoursePoints="+204 +208 +210 +220" Finish="6VP"/>
+			<OperatorSelectors Ends="CHMV6 NV6"/>
+		</ShRoute>
+		<ShRoute Tag="M204_CHMV7" Type="PpoShuntingRoute">
+			<Trace Start="M204" OnCoursePoints="+204 +208 +210 -220" Finish="7VP"/>
+			<OperatorSelectors Ends="CHMV7 NV7"/>
+		</ShRoute>
+		<ShRoute Tag="M204_M213" Type="PpoShuntingRoute">
+			<Trace Start="M204" OnCoursePoints="+204 +208 -210 -218SO -222" Finish="8VP"/>
+			<OperatorSelectors Ends="M212 M213"/>
+		</ShRoute>
+		<ShRoute Tag="M204_M214" Type="PpoShuntingRoute">
+			<Trace Start="M204" OnCoursePoints="+204 +208 -210 -218SO +222 +224" Finish="M214"/>
+			<OperatorSelectors Ends="M214"/>
+		</ShRoute>
+		<ShRoute Tag="M204_M216" Type="PpoShuntingRoute">
+			<Trace Start="M204" OnCoursePoints="+204 +208 -210 -218SO +222 -224 +228" Finish="M216"/>
+			<OperatorSelectors Ends="M216"/>
+		</ShRoute>
+		<ShRoute Tag="M204_M218" Type="PpoShuntingRoute">
+			<Trace Start="M204" OnCoursePoints="+204 +208 -210 -218SO +222 -224 -228" Finish="M218"/>
+			<OperatorSelectors Ends="M218"/>
+		</ShRoute>
+		<ShRoute Tag="M204_M303" Type="PpoShuntingRoute">
+			<Trace Start="M204" OnCoursePoints="+204 -208" Finish="M303"/>
+			<OperatorSelectors Ends="M303 M208"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M206" Type="PpoShuntingSignal">
+		<ShRoute Tag="M206_CHMV3" Type="PpoShuntingRoute">
+			<Trace Start="M206" OnCoursePoints="+212" Finish="3VP"/>
+			<OperatorSelectors Ends="CHMV3 NV3"/>
+		</ShRoute>
+		<ShRoute Tag="M206_CHMV4" Type="PpoShuntingRoute">
+			<Trace Start="M206" OnCoursePoints="-212 +216" Finish="4VP"/>
+			<OperatorSelectors Ends="CHMV4 NV4"/>
+		</ShRoute>
+		<ShRoute Tag="M206_CHMV5" Type="PpoShuntingRoute">
+			<Trace Start="M206" OnCoursePoints="-212 -216" Finish="5VP"/>
+			<OperatorSelectors Ends="CHMV5 NV5"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M208" Type="PpoShuntingSignal">
+		<ShRoute Tag="M208_M204" Type="PpoShuntingRoute">
+			<Trace Start="M208" OnCoursePoints="-208 +204" Finish="M204"/>
+			<OperatorSelectors Ends="M204"/>
+		</ShRoute>
+		<ShRoute Tag="M208_M202" Type="PpoShuntingRoute">
+			<Trace Start="M208" OnCoursePoints="-208 -204 -202" Finish="CHNAP"/>
+			<OperatorSelectors Ends="M202"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M210" Type="PpoShuntingSignal">
+		<ShRoute Tag="M210_M209" Type="PpoShuntingRoute">
+			<Trace Start="M210" OnCoursePoints="-214" Finish="M209"/>
+			<OperatorSelectors Ends="M209 NV1"/>
+		</ShRoute>
+		<ShRoute Tag="M210_M207" Type="PpoShuntingRoute">
+			<Trace Start="M210" OnCoursePoints="+214" Finish="M207"/>
+			<OperatorSelectors Ends="M207 NV2"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M212" Type="PpoShuntingSignal">
+		<ShRoute Tag="M212_M204" Type="PpoShuntingRoute">
+			<Trace Start="M212" OnCoursePoints="-202 -204 +208 -210 -218SO -222" Finish="M204"/>
+			<OperatorSelectors Ends="M204"/>
+		</ShRoute>
+		<ShRoute Tag="M212_M202" Type="PpoShuntingRoute">
+			<Trace Start="M212" OnCoursePoints="+204 +208 -210 -218SO -222" Finish="CHNAP"/>
+			<OperatorSelectors Ends="M202"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M214" Type="PpoShuntingSignal">
+		<ShRoute Tag="M214_M204" Type="PpoShuntingRoute">
+			<Trace Start="M214" OnCoursePoints="-202 -204 +208 -210 -218SO +222 +224" Finish="M204"/>
+			<OperatorSelectors Ends="M204"/>
+		</ShRoute>
+		<ShRoute Tag="M214_M202" Type="PpoShuntingRoute">
+			<Trace Start="M214" OnCoursePoints="+204 +208 -210 -218SO +222 +224" Finish="CHNAP"/>
+			<OperatorSelectors Ends="M202"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M216" Type="PpoShuntingSignal">
+		<ShRoute Tag="M216_M204" Type="PpoShuntingRoute">
+			<Trace Start="M216" OnCoursePoints="-202 -204 +208 -210 -218SO +222 -224 +228" Finish="M204"/>
+			<OperatorSelectors Ends="M204"/>
+		</ShRoute>
+		<ShRoute Tag="M216_M202" Type="PpoShuntingRoute">
+			<Trace Start="M216" OnCoursePoints="+204 +208 -210 -218SO +222 -224 +228" Finish="CHNAP"/>
+			<OperatorSelectors Ends="M202"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M218" Type="PpoShuntingSignal">
+		<ShRoute Tag="M218_M204" Type="PpoShuntingRoute">
+			<Trace Start="M218" OnCoursePoints="-202 -204 +208 -210 -218SO +222 -224 -228" Finish="M204"/>
+			<OperatorSelectors Ends="M204"/>
+		</ShRoute>
+		<ShRoute Tag="M218_M202" Type="PpoShuntingRoute">
+			<Trace Start="M218" OnCoursePoints="+204 +208 -210 -218SO +222 -224 -228" Finish="CHNAP"/>
+			<OperatorSelectors Ends="M202"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M301" Type="PpoShuntingSignal">
+		<ShRoute Tag="M301_M305" Type="PpoShuntingRoute">
+			<Trace Start="M301" OnCoursePoints="-301SO -303 +305" Finish="M305"/>
+			<OperatorSelectors Ends="M305"/>
+		</ShRoute>
+		<ShRoute Tag="M301_M307" Type="PpoShuntingRoute">
+			<Trace Start="M301" OnCoursePoints="-301SO -303 -305" Finish="M307"/>
+			<OperatorSelectors Ends="M307"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M303" Type="PpoShuntingSignal">
+		<ShRoute Tag="M303_M305" Type="PpoShuntingRoute">
+			<Trace Start="M303" OnCoursePoints="+303 +305" Finish="M305"/>
+			<OperatorSelectors Ends="M305"/>
+		</ShRoute>
+		<ShRoute Tag="M303_M307" Type="PpoShuntingRoute">
+			<Trace Start="M303" OnCoursePoints="+303 -305" Finish="M307"/>
+			<OperatorSelectors Ends="M307"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M305" Type="PpoShuntingSignal">
+		<ShRoute Tag="M305_M321" Type="PpoShuntingRoute">
+			<Trace Start="M305" OnCoursePoints="+309 +313" Finish="M321"/>
+			<OperatorSelectors Ends="M321 M315"/>
+		</ShRoute>
+		<ShRoute Tag="M305_NMS1" Type="PpoShuntingRoute">
+			<Trace Start="M305" OnCoursePoints="+309 -313 -315 +319 -327 -329 -335" Finish="1ASP"/>
+			<OperatorSelectors Ends="NMS1 CHS1"/>
+		</ShRoute>
+		<ShRoute Tag="M305_NS2" Type="PpoShuntingRoute">
+			<Trace Start="M305" OnCoursePoints="+309 -313 -315 +319 -327 -329 +335" Finish="2SP"/>
+			<OperatorSelectors Ends="NS2 CHS2"/>
+		</ShRoute>
+		<ShRoute Tag="M305_NS3" Type="PpoShuntingRoute">
+			<Trace Start="M305" OnCoursePoints="+309 -313 -315 +319 +327" Finish="3SP"/>
+			<OperatorSelectors Ends="NS3 CHS3"/>
+		</ShRoute>
+		<ShRoute Tag="M305_M319" Type="PpoShuntingRoute">
+			<Trace Start="M305" OnCoursePoints="+309 -313 -315 -319 -321 -323" Finish="M319"/>
+			<OperatorSelectors Ends="M319"/>
+		</ShRoute>
+		<ShRoute Tag="M305_M322" Type="PpoShuntingRoute">
+			<Trace Start="M305" OnCoursePoints="+309 -313 -315 -319 -321 +323" Finish="M322"/>
+			<OperatorSelectors Ends="M322 M323"/>
+		</ShRoute>
+		<ShRoute Tag="M305_M13" Type="PpoShuntingRoute">
+			<Trace Start="M305" OnCoursePoints="-309 -1SB -1 -5" Finish="M13"/>
+			<OperatorSelectors Ends="M13"/>
+		</ShRoute>
+		<ShRoute Tag="M305_M1" Type="PpoShuntingRoute">
+			<Trace Start="M305" OnCoursePoints="-309 -1SB -1 +5" Finish="M1"/>
+			<OperatorSelectors Ends="M1"/>
+		</ShRoute>
+		<ShRoute Tag="M305_M2" Type="PpoShuntingRoute">
+			<Trace Start="M305" OnCoursePoints="-309 -1SB +1 +3" Finish="M2"/>
+			<OperatorSelectors Ends="M2"/>
+		</ShRoute>
+		<ShRoute Tag="M305_M3" Type="PpoShuntingRoute">
+			<Trace Start="M305" OnCoursePoints="-309 -1SB +1 -3" Finish="M3"/>
+			<OperatorSelectors Ends="M3"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M307" Type="PpoShuntingSignal">
+		<ShRoute Tag="M307_M301" Type="PpoShuntingRoute">
+			<Trace Start="M307" OnCoursePoints="-307SO -305 -303 -301SO" Finish="M301P"/>
+			<OperatorSelectors Ends="M301"/>
+		</ShRoute>
+		<ShRoute Tag="M307_M208" Type="PpoShuntingRoute">
+			<Trace Start="M307" OnCoursePoints="-307SO -305 +303" Finish="M208"/>
+			<OperatorSelectors Ends="M208 M303"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M309" Type="PpoShuntingSignal">
+		<ShRoute Tag="M309_M317" Type="PpoShuntingRoute">
+			<Trace Start="M309" OnCoursePoints="-311SO -317" Finish="M317"/>
+			<OperatorSelectors Ends="M317"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M311" Type="PpoShuntingSignal">
+		<ShRoute Tag="M311_M317" Type="PpoShuntingRoute">
+			<Trace Start="M311" OnCoursePoints="+317" Finish="M317"/>
+			<OperatorSelectors Ends="M317"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M313" Type="PpoShuntingSignal">
+		<ShRoute Tag="M313_NMS1" Type="PpoShuntingRoute">
+			<Trace Start="M313" OnCoursePoints="+315 +319 -327 -329 -335" Finish="1ASP"/>
+			<OperatorSelectors Ends="NMS1 CHS1"/>
+		</ShRoute>
+		<ShRoute Tag="M313_NS2" Type="PpoShuntingRoute">
+			<Trace Start="M313" OnCoursePoints="+315 +319 -327 -329 +335" Finish="2SP"/>
+			<OperatorSelectors Ends="NS2 CHS2"/>
+		</ShRoute>
+		<ShRoute Tag="M313_NS3" Type="PpoShuntingRoute">
+			<Trace Start="M313" OnCoursePoints="+315 +319 +327" Finish="3SP"/>
+			<OperatorSelectors Ends="NS3 CHS3"/>
+		</ShRoute>
+		<ShRoute Tag="M313_M319" Type="PpoShuntingRoute">
+			<Trace Start="M313" OnCoursePoints="+315 -319 -321 -323" Finish="M319"/>
+			<OperatorSelectors Ends="M319"/>
+		</ShRoute>
+		<ShRoute Tag="M313_M322" Type="PpoShuntingRoute">
+			<Trace Start="M313" OnCoursePoints="+315 -319 -321 +323" Finish="M322"/>
+			<OperatorSelectors Ends="M322 M323"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M315" Type="PpoShuntingSignal">
+		<ShRoute Tag="M315_M301" Type="PpoShuntingRoute">
+			<Trace Start="M315" OnCoursePoints="+313 +309 +305 -303 -301SO" Finish="M301P"/>
+			<OperatorSelectors Ends="M301"/>
+		</ShRoute>
+		<ShRoute Tag="M315_M208" Type="PpoShuntingRoute">
+			<Trace Start="M315" OnCoursePoints="+313 +309 +305 +303" Finish="M208"/>
+			<OperatorSelectors Ends="M208 M303"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M317" Type="PpoShuntingSignal">
+		<ShRoute Tag="M317_M319" Type="PpoShuntingRoute">
+			<Trace Start="M317" OnCoursePoints="+321 -323" Finish="M319"/>
+			<OperatorSelectors Ends="M319"/>
+		</ShRoute>
+		<ShRoute Tag="M317_M322" Type="PpoShuntingRoute">
+			<Trace Start="M317" OnCoursePoints="+321 +323" Finish="M322"/>
+			<OperatorSelectors Ends="M322 M323"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M319" Type="PpoShuntingSignal">
+		<ShRoute Tag="M319_NS4" Type="PpoShuntingRoute">
+			<Trace Start="M319" OnCoursePoints="-325" Finish="4SP"/>
+			<OperatorSelectors Ends="NS4 CHS4"/>
+		</ShRoute>
+		<ShRoute Tag="M319_NS5" Type="PpoShuntingRoute">
+			<Trace Start="M319" OnCoursePoints="+325 -331" Finish="5SP"/>
+			<OperatorSelectors Ends="NS5 CHS5"/>
+		</ShRoute>
+		<ShRoute Tag="M319_NS6" Type="PpoShuntingRoute">
+			<Trace Start="M319" OnCoursePoints="+325 +331 -333" Finish="6SP"/>
+			<OperatorSelectors Ends="NS6 CHS6"/>
+		</ShRoute>
+		<ShRoute Tag="M319_NS7" Type="PpoShuntingRoute">
+			<Trace Start="M319" OnCoursePoints="+325 +331 +333 -337" Finish="7SP"/>
+			<OperatorSelectors Ends="NS7 CHS7"/>
+		</ShRoute>
+		<ShRoute Tag="M319_M320" Type="PpoShuntingRoute">
+			<Trace Start="M319" OnCoursePoints="+325 +331 +333 +337" Finish="M320"/>
+			<OperatorSelectors Ends="M320 CHS8"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M321" Type="PpoShuntingSignal">
+		<ShRoute Tag="M321_NMS1" Type="PpoShuntingRoute">
+			<Trace Start="M321" OnCoursePoints="+329 -335" Finish="1ASP"/>
+			<OperatorSelectors Ends="NMS1 CHS1"/>
+		</ShRoute>
+		<ShRoute Tag="M321_NS2" Type="PpoShuntingRoute">
+			<Trace Start="M321" OnCoursePoints="+329 +335" Finish="2SP"/>
+			<OperatorSelectors Ends="NS2 CHS2"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M323" Type="PpoShuntingSignal">
+		<ShRoute Tag="M323_M311" Type="PpoShuntingRoute">
+			<Trace Start="M323" OnCoursePoints="+323 +321 +317" Finish="M311P"/>
+			<OperatorSelectors Ends="M311"/>
+		</ShRoute>
+		<ShRoute Tag="M323_M309" Type="PpoShuntingRoute">
+			<Trace Start="M323" OnCoursePoints="+323 +321 -317 -311SO" Finish="M309P"/>
+			<OperatorSelectors Ends="M309"/>
+		</ShRoute>
+		<ShRoute Tag="M323_M313" Type="PpoShuntingRoute">
+			<Trace Start="M323" OnCoursePoints="+323 -321 -319 +315" Finish="NVAP"/>
+			<OperatorSelectors Ends="M313"/>
+		</ShRoute>
+		<ShRoute Tag="M323_M208" Type="PpoShuntingRoute">
+			<Trace Start="M323" OnCoursePoints="+323 -321 -319 -315 -313 +309 +305 +303" Finish="M208"/>
+			<OperatorSelectors Ends="M208 M303"/>
+		</ShRoute>
+		<ShRoute Tag="M323_M301" Type="PpoShuntingRoute">
+			<Trace Start="M323" OnCoursePoints="+323 -321 -319 -315 -313 +309 +305 -303 -301SO" Finish="M301P"/>
+			<OperatorSelectors Ends="M301"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M1" Type="PpoShuntingSignal">
+		<ShRoute Tag="M1_M208" Type="PpoShuntingRoute">
+			<Trace Start="M1" OnCoursePoints="-309 -1SB -1 +5 +305 +303" Finish="M208"/>
+			<OperatorSelectors Ends="M208 M303"/>
+		</ShRoute>
+		<ShRoute Tag="M1_M301" Type="PpoShuntingRoute">
+			<Trace Start="M1" OnCoursePoints="-309 -1SB -1 +5 +305 -303 -301SO" Finish="M208"/>
+			<OperatorSelectors Ends="M208 M303"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M2" Type="PpoShuntingSignal">
+		<ShRoute Tag="M2_M208" Type="PpoShuntingRoute">
+			<Trace Start="M2" OnCoursePoints="-309 -1SB +1 +3 +5 +305 +303" Finish="M208"/>
+			<OperatorSelectors Ends="M208 M303"/>
+		</ShRoute>
+		<ShRoute Tag="M2_M301" Type="PpoShuntingRoute">
+			<Trace Start="M2" OnCoursePoints="-309 -1SB +1 +3 +5 +305 -303 -301SO" Finish="M208"/>
+			<OperatorSelectors Ends="M208 M303"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M3" Type="PpoShuntingSignal">
+		<ShRoute Tag="M3_M208" Type="PpoShuntingRoute">
+			<Trace Start="M3" OnCoursePoints="-309 -1SB +1 -3 +5 +305 +303" Finish="M208"/>
+			<OperatorSelectors Ends="M208 M303"/>
+		</ShRoute>
+		<ShRoute Tag="M3_M301" Type="PpoShuntingRoute">
+			<Trace Start="M3" OnCoursePoints="-309 -1SB +1 -3 +5 +305 -303 -301SO" Finish="M208"/>
+			<OperatorSelectors Ends="M208 M303"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M13" Type="PpoShuntingSignal">
+		<ShRoute Tag="M13_M208" Type="PpoShuntingRoute">
+			<Trace Start="M13" OnCoursePoints="-309 -1SB -1 -5 +305 +303" Finish="M208"/>
+			<OperatorSelectors Ends="M208 M303"/>
+		</ShRoute>
+		<ShRoute Tag="M13_M301" Type="PpoShuntingRoute">
+			<Trace Start="M13" OnCoursePoints="-309 -1SB -1 -5 +305 -303 -301SO" Finish="M208"/>
+			<OperatorSelectors Ends="M208 M303"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M302" Type="PpoShuntingSignal">
+		<ShRoute Tag="M302_M304" Type="PpoShuntingRoute">
+			<Trace Start="M302" OnCoursePoints="" Finish="M302_304P"/>
+			<OperatorSelectors Ends="M304"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M304" Type="PpoShuntingSignal">
+		<ShRoute Tag="M304_M314" Type="PpoShuntingRoute">
+			<Trace Start="M304" OnCoursePoints="+302" Finish="M314"/>
+			<OperatorSelectors Ends="M314"/>
+		</ShRoute>
+		<ShRoute Tag="M304_M308" Type="PpoShuntingRoute">
+			<Trace Start="M304" OnCoursePoints="-302 +308" Finish="M312"/>
+			<OperatorSelectors Ends="M312 M308"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M306" Type="PpoShuntingSignal">
+		<ShRoute Tag="M306_M310" Type="PpoShuntingRoute">
+			<Trace Start="M306" OnCoursePoints="-304 -306SO" Finish="M310"/>
+			<OperatorSelectors Ends="M310"/>
+		</ShRoute>
+		<ShRoute Tag="M306_M312" Type="PpoShuntingRoute">
+			<Trace Start="M306" OnCoursePoints="+304 -308" Finish="M312"/>
+			<OperatorSelectors Ends="M312"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M308" Type="PpoShuntingSignal">
+		<ShRoute Tag="M308_M302" Type="PpoShuntingRoute">
+			<Trace Start="M308" OnCoursePoints="-302" Finish="CHSAP"/>
+			<OperatorSelectors Ends="M302"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M310" Type="PpoShuntingSignal">
+		<ShRoute Tag="M310_M306" Type="PpoShuntingRoute">
+			<Trace Start="M310" OnCoursePoints="-304 -306SO" Finish="M119"/>
+			<OperatorSelectors Ends="M119 M306"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M312" Type="PpoShuntingSignal">
+		<ShRoute Tag="M312_NS1" Type="PpoShuntingRoute">
+			<Trace Start="M312" OnCoursePoints="+310 -314" Finish="1SP"/>
+			<OperatorSelectors Ends="NS1 CHMS1"/>
+		</ShRoute>
+		<ShRoute Tag="M312_NS2" Type="PpoShuntingRoute">
+			<Trace Start="M312" OnCoursePoints="+310 +314" Finish="2SP"/>
+			<OperatorSelectors Ends="NS2 CHS2"/>
+		</ShRoute>
+		<ShRoute Tag="M312_NS3" Type="PpoShuntingRoute">
+			<Trace Start="M312" OnCoursePoints="-310 -312 +316 +320" Finish="3SP"/>
+			<OperatorSelectors Ends="NS3 CHS3"/>
+		</ShRoute>
+		<ShRoute Tag="M312_NS4" Type="PpoShuntingRoute">
+			<Trace Start="M312" OnCoursePoints="-310 -312 +316 -320 -322" Finish="4SP"/>
+			<OperatorSelectors Ends="NS4 CHS4"/>
+		</ShRoute>
+		<ShRoute Tag="M312_NS4_V4" Type="PpoShuntingRoute">
+			<Trace Start="M312" OnCoursePoints="-310 -312 -316 -318 -324 +322" Finish="4SP"/>
+			<OperatorSelectors Ends="NS4 CHS4"/>
+		</ShRoute>
+		<ShRoute Tag="M312_NS5" Type="PpoShuntingRoute">
+			<Trace Start="M312" OnCoursePoints="-310 -312 -316 -318 +324 -326 +328" Finish="5SP"/>
+			<OperatorSelectors Ends="NS5 CHS5"/>
+		</ShRoute>
+		<ShRoute Tag="M312_NS6" Type="PpoShuntingRoute">
+			<Trace Start="M312" OnCoursePoints="-310 -312 -316 -318 +324 -326 -328 +330" Finish="6SP"/>
+			<OperatorSelectors Ends="NS6 CHS6"/>
+		</ShRoute>
+		<ShRoute Tag="M312_NS7" Type="PpoShuntingRoute">
+			<Trace Start="M312" OnCoursePoints="-310 -312 -316 -318 +324 -326 -328 -330" Finish="7SP"/>
+			<OperatorSelectors Ends="NS7 CHS7"/>
+		</ShRoute>
+		<ShRoute Tag="M312_M318" Type="PpoShuntingRoute">
+			<Trace Start="M312" OnCoursePoints="-310 -312 -316 -318 +324 +326" Finish="M318"/>
+			<OperatorSelectors Ends="M318 NS8"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M314" Type="PpoShuntingSignal">
+		<ShRoute Tag="M314_NS3" Type="PpoShuntingRoute">
+			<Trace Start="M314" OnCoursePoints="+312 +316 +320" Finish="3SP"/>
+			<OperatorSelectors Ends="NS3 CHS3"/>
+		</ShRoute>
+		<ShRoute Tag="M314_NS4" Type="PpoShuntingRoute">
+			<Trace Start="M314" OnCoursePoints="+312 +316 -320 -322" Finish="4SP"/>
+			<OperatorSelectors Ends="NS4 CHS4"/>
+		</ShRoute>
+		<ShRoute Tag="M314_NS4_V4" Type="PpoShuntingRoute">
+			<Trace Start="M314" OnCoursePoints="+312 -316 -318 -324 +322" Finish="4SP"/>
+			<OperatorSelectors Ends="NS4 CHS4"/>
+		</ShRoute>
+		<ShRoute Tag="M314_NS5" Type="PpoShuntingRoute">
+			<Trace Start="M314" OnCoursePoints="+312 -316 -318 +324 -326 +328" Finish="5SP"/>
+			<OperatorSelectors Ends="NS5 CHS5"/>
+		</ShRoute>
+		<ShRoute Tag="M314_NS6" Type="PpoShuntingRoute">
+			<Trace Start="M314" OnCoursePoints="+312 -316 -318 +324 -326 -328 +330" Finish="6SP"/>
+			<OperatorSelectors Ends="NS6 CHS6"/>
+		</ShRoute>
+		<ShRoute Tag="M314_NS7" Type="PpoShuntingRoute">
+			<Trace Start="M314" OnCoursePoints="+312 -316 -318 +324 -326 -328 -330" Finish="7SP"/>
+			<OperatorSelectors Ends="NS7 CHS7"/>
+		</ShRoute>
+		<ShRoute Tag="M314_M318" Type="PpoShuntingRoute">
+			<Trace Start="M314" OnCoursePoints="+312 -316 -318 +324 +326" Finish="M318"/>
+			<OperatorSelectors Ends="M318 NS8"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M316" Type="PpoShuntingSignal">
+		<ShRoute Tag="M316_NS4" Type="PpoShuntingRoute">
+			<Trace Start="M316" OnCoursePoints="+318 -324 +322" Finish="4SP"/>
+			<OperatorSelectors Ends="NS4 CHS4"/>
+		</ShRoute>
+		<ShRoute Tag="M316_NS5" Type="PpoShuntingRoute">
+			<Trace Start="M316" OnCoursePoints="+318 +324 -326 +328" Finish="5SP"/>
+			<OperatorSelectors Ends="NS5 CHS5"/>
+		</ShRoute>
+		<ShRoute Tag="M316_NS6" Type="PpoShuntingRoute">
+			<Trace Start="M316" OnCoursePoints="+318 +324 -326 -328 +330" Finish="6SP"/>
+			<OperatorSelectors Ends="NS6 CHS6"/>
+		</ShRoute>
+		<ShRoute Tag="M316_NS7" Type="PpoShuntingRoute">
+			<Trace Start="M316" OnCoursePoints="+318 +324 -326 -328 -330" Finish="7SP"/>
+			<OperatorSelectors Ends="NS7 CHS7"/>
+		</ShRoute>
+		<ShRoute Tag="M316_M318" Type="PpoShuntingRoute">
+			<Trace Start="M316" OnCoursePoints="+318 +324 +326" Finish="M318"/>
+			<OperatorSelectors Ends="M318 NS8"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M318" Type="PpoShuntingSignal">
+		<ShRoute Tag="M318_M320" Type="PpoShuntingRoute">
+			<Trace Start="M318" OnCoursePoints="+332" Finish="8SP"/>
+			<OperatorSelectors Ends="M320 CHS8"/>
+		</ShRoute>
+		<ShRoute Tag="M318_M322" Type="PpoShuntingRoute">
+			<Trace Start="M318" OnCoursePoints="-332 -334SO" Finish="9SP"/>
+			<OperatorSelectors Ends="M322 M323"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M320" Type="PpoShuntingSignal">
+		<ShRoute Tag="M320_NS8" Type="PpoShuntingRoute">
+			<Trace Start="M320" OnCoursePoints="+332" Finish="8ASP"/>
+			<OperatorSelectors Ends="M318 NS8"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M322" Type="PpoShuntingSignal">
+		<ShRoute Tag="M322_NS8" Type="PpoShuntingRoute">
+			<Trace Start="M322" OnCoursePoints="-332 -334SO" Finish="8ASP"/>
+			<OperatorSelectors Ends="M318 NS8"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M324" Type="PpoShuntingSignal">
+		<ShRoute Tag="M324_CHMS1" Type="PpoShuntingRoute">
+			<Trace Start="M324" OnCoursePoints="-338 -336" Finish="1SP"/>
+			<OperatorSelectors Ends="CHMS1 NS1"/>
+		</ShRoute>
+		<ShRoute Tag="M324_NML1" Type="PpoShuntingRoute">
+			<Trace Start="M324" OnCoursePoints="+338 +108 -110 -112" Finish="1LP"/>
+			<OperatorSelectors Ends="NML1 CHL1"/>
+		</ShRoute>
+		<ShRoute Tag="M324_M108" Type="PpoShuntingRoute">
+			<Trace Start="M324" OnCoursePoints="+338 +108 +110" Finish="M108"/>
+			<OperatorSelectors Ends="M108"/>
+		</ShRoute>
+	</ShuntingSignal>
+	<ShuntingSignal Tag="M116" Type="PpoShuntingSignal">
+		<ShRoute Tag="M116_M112" Type="PpoShuntingRoute">
+			<Trace Start="M116" OnCoursePoints="-114" Finish="4BLP"/>
+			<OperatorSelectors Ends="M112 NML4"/>
+		</ShRoute>
+	</ShuntingSignal>
+</Routes>
