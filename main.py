@@ -29,6 +29,18 @@ class Route:
         self.next_also_on_main = "K"
         self.next_also_on_main_green = "K"
         self.next_also_on_side = "K"
+        # self._crossroad_1_id = None
+        # self._crossroad_1_delay_open = None
+        # self._crossroad_1_start_notif = None
+        # self._crossroad_1_delay_start_notif = None
+        # self._crossroad_2_id = None
+        # self._crossroad_2_delay_open = None
+        # self._crossroad_2_start_notif = None
+        # self._crossroad_2_delay_start_notif = None
+        # self._crossroad_3_id = None
+        # self._crossroad_3_delay_open = None
+        # self._crossroad_3_start_notif = None
+        # self._crossroad_3_delay_start_notif = None
 
     def signal_light_checker(self, value, column_name):
         if self.route_type == "PpoShuntingRoute":
@@ -116,6 +128,8 @@ class Route:
         assert (not val_copy) or val_copy.isspace(), \
             "Pointers list {} is not valid in line {}".format(value, self.line_in_excel)
         # ! implement here check points in list of available values
+        if value:
+            value += " "
         self._trace_points = value
 
     @property
@@ -146,7 +160,7 @@ class Route:
             self._route_points_before_route = None
             return
         # ! implement here check route_points_before_route in list of available values
-        self._route_points_before_route = value
+        self._route_points_before_route = value+" "
 
     @property
     def next_dark(self):
@@ -253,7 +267,7 @@ def form_route_element(signal_element_, route_) -> ElTr.Element:
     trace_element.set("Start", route_.trace_begin)
     trace_element.set("OnCoursePoints", route_.trace_points)
     trace_element.set("Finish", route_.trace_end)
-    if route_.route_type == "PpoTrainRoute" and route_.trace_variants:
+    if route_.trace_variants:
         trace_element.set("Variants", route_.trace_variants)
     selectors_element = ElTr.SubElement(route_element, 'OperatorSelectors')
     selectors_element.set("Ends", route_.end_selectors)
@@ -311,8 +325,8 @@ for shunt_signal in shunt_shs_routes_dict:
 
 
 xmlstr_train = xml.dom.minidom.parseString(ElTr.tostring(train_route_element)).toprettyxml()
-with open('train_routes.xml', 'w', encoding='utf-8') as out:
+with open('TrainRoute.xml', 'w', encoding='utf-8') as out:
     out.write(xmlstr_train)
 xmlstr_shunt = xml.dom.minidom.parseString(ElTr.tostring(shunt_route_element)).toprettyxml()
-with open('shunt_routes.xml', 'w', encoding='utf-8') as out:
+with open('ShuntingRoute.xml', 'w', encoding='utf-8') as out:
     out.write(xmlstr_shunt)
