@@ -45,7 +45,7 @@ class Route:
     def signal_light_checker(self, value, column_name):
         if self.route_type == "PpoShuntingRoute":
             return
-        assert value in ["K", "ZH", "Z", "ZHM", "ZM", "DZH", "DZHM"], \
+        assert value in ["K", "ZH", "Z", "ZHM_Z", "ZHM_ZH", "ZM", "DZH", "DZHM"], \
             "Not supported light value {} in line {} column {}".format(value, self.line_in_excel, column_name)
 
     @property

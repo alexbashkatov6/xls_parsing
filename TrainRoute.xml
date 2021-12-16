@@ -388,7 +388,7 @@
 		<TrRoute Tag="CHS_NS3" Type="PpoTrainRoute" Id="25">
 			<Trace Start="CHS" OnCoursePoints="+302 +312 +316 +320 " Finish="CHS3"/>
 			<OperatorSelectors Ends="NS3 CHS3"/>
-			<SignalingDependence Dark="ZH" Stop="ZH" OnMain="K" OnMainGreen="Z" OnSide="ZHM" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<SignalingDependence Dark="ZH" Stop="ZH" OnMain="K" OnMainGreen="Z" OnSide="ZHM_Z" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
 		</TrRoute>
 		<TrRoute Tag="CHS_NS1" Type="PpoTrainRoute" Id="26">
 			<Trace Start="CHS" OnCoursePoints="-302 +308 +310 -314 " Finish="CHMS1"/>
@@ -470,7 +470,7 @@
 		<TrRoute Tag="NML1_CHMV3" Type="PpoTrainRoute" Id="41">
 			<Trace Start="NML1" OnCoursePoints="+112 +203 +205 " Finish="NV3"/>
 			<OperatorSelectors Ends="NV3 CHMV3"/>
-			<SignalingDependence Dark="ZH" Stop="ZH" OnMain="K" OnMainGreen="K" OnSide="ZHM" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<SignalingDependence Dark="ZH" Stop="ZH" OnMain="K" OnMainGreen="K" OnSide="ZHM_Z" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
 		</TrRoute>
 		<TrRoute Tag="NML1_CHMV4" Type="PpoTrainRoute" Id="42">
 			<Trace Start="NML1" OnCoursePoints="+112 +203 -205 -207 " Finish="NV4"/>
@@ -679,7 +679,7 @@
 		<TrRoute Tag="CHMV2_NML2" Type="PpoTrainRoute" Id="67">
 			<Trace Start="CHMV2" OnCoursePoints="+102 +201 " Finish="CHL2"/>
 			<OperatorSelectors Ends="NML2 CHL2"/>
-			<SignalingDependence Dark="ZH" Stop="ZH" OnMain="K" OnMainGreen="K" OnSide="ZHM" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<SignalingDependence Dark="ZH" Stop="ZH" OnMain="K" OnMainGreen="K" OnSide="ZHM_Z" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
 			<PointsAnDTrack Points="+215 "/>
 		</TrRoute>
 		<TrRoute Tag="CHMV2_NML3" Type="PpoTrainRoute" Id="68">
@@ -711,7 +711,7 @@
 		<TrRoute Tag="CHMV3_NML1" Type="PpoTrainRoute" Id="70">
 			<Trace Start="CHMV3" OnCoursePoints="+112 +203 +205 " Finish="CHL1"/>
 			<OperatorSelectors Ends="NML1 CHL1"/>
-			<SignalingDependence Dark="ZH" Stop="ZH" OnMain="K" OnMainGreen="K" OnSide="ZHM" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<SignalingDependence Dark="ZH" Stop="ZH" OnMain="K" OnMainGreen="K" OnSide="ZHM_Z" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
 		</TrRoute>
 		<TrRoute Tag="CHMV3_NML2" Type="PpoTrainRoute" Id="71">
 			<Trace Start="CHMV3" OnCoursePoints="+102 -201 -203 +205 " Finish="CHL2"/>
@@ -901,7 +901,7 @@
 		<TrRoute Tag="CHMS1_NMS1" Type="PpoTrainRoute" Id="90">
 			<Trace Start="CHMS1" OnCoursePoints="+336 " Finish="CHS1"/>
 			<OperatorSelectors Ends="NMS1 CHS1"/>
-			<SignalingDependence Dark="ZH" Stop="ZH" OnMain="K" OnMainGreen="K" OnSide="ZHM" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<SignalingDependence Dark="ZH" Stop="ZH" OnMain="K" OnMainGreen="K" OnSide="ZHM_Z" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
 		</TrRoute>
 		<ShRoute Tag="CHMS1_NMS1" Type="PpoShuntingRoute" Id="348">
 			<Trace Start="CHMS1" OnCoursePoints="+336 " Finish="1ASP"/>
@@ -916,7 +916,7 @@
 		<TrRoute Tag="NMS1_CHMS1" Type="PpoTrainRoute" Id="91">
 			<Trace Start="NMS1" OnCoursePoints="+336 " Finish="NS1"/>
 			<OperatorSelectors Ends="CHMS1 NS1"/>
-			<SignalingDependence Dark="ZH" Stop="ZH" OnMain="K" OnMainGreen="K" OnSide="ZHM" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<SignalingDependence Dark="ZH" Stop="ZH" OnMain="K" OnMainGreen="K" OnSide="ZHM_Z" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
 		</TrRoute>
 		<ShRoute Tag="NMS1_CHMS1" Type="PpoShuntingRoute" Id="392">
 			<Trace Start="NMS1" OnCoursePoints="+336 " Finish="1SP"/>
@@ -927,7 +927,7 @@
 		<TrRoute Tag="CHN_NV2" Type="PpoTrainRoute" Id="92" ValueRoutePointer="1">
 			<Trace Start="CHN" OnCoursePoints="+202 +206 +214 +215 " Finish="CHMV2"/>
 			<OperatorSelectors Ends="NV2 CHMV2"/>
-			<SignalingDependence Dark="ZH" Stop="ZH" OnMain="Z" OnMainGreen="K" OnSide="ZHM" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<SignalingDependence Dark="ZH" Stop="ZH" OnMain="Z" OnMainGreen="K" OnSide="ZHM_Z" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
 		</TrRoute>
 		<TrRoute Tag="CHN_NV3" Type="PpoTrainRoute" Id="93" ValueRoutePointer="1">
 			<Trace Start="CHN" OnCoursePoints="+202 -206 +212 " Finish="CHMV3"/>
@@ -1347,7 +1347,7 @@
 		<TrRoute Tag="NV_CHS3" Type="PpoTrainRoute" Id="121">
 			<Trace Start="NV" OnCoursePoints="+315 +319 +327 " Finish="NS3"/>
 			<OperatorSelectors Ends="CHS3 NS3"/>
-			<SignalingDependence Dark="ZH" Stop="ZH" OnMain="K" OnMainGreen="Z" OnSide="ZHM" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<SignalingDependence Dark="ZH" Stop="ZH" OnMain="K" OnMainGreen="Z" OnSide="ZHM_Z" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
 		</TrRoute>
 		<TrRoute Tag="NV_CHS1" Type="PpoTrainRoute" Id="122">
 			<Trace Start="NV" OnCoursePoints="+315 +319 -327 -329 -335 " Finish="NMS1"/>
