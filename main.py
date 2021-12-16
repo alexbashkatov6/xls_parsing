@@ -235,9 +235,9 @@ class Route:
         self._next_also_on_side = value
 
 
-routes = []
-
 # 1. File xlsx to list of routes
+
+routes = []
 
 dataframe: DataFrame = pd.read_excel('Routes.xlsx', dtype='string')
 dataframe = dataframe.fillna("")
