@@ -11,56 +11,67 @@
 			<Trace Start="NSH" OnCoursePoints="+103 +107 +109 -115 " Finish="NML1"/>
 			<OperatorSelectors Ends="CHL1 NML1"/>
 			<SignalingDependence Dark="DZH" Stop="DZH" OnMain="DZHM" OnMainGreen="K" OnSide="DZHM" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<CrossroadNotification CrossroadId="1" DelayOpenSignal="32" DelayStartNotification="26" StartNotification="NSHP"/>
 		</TrRoute>
 		<TrRoute Tag="NSH_CHL3" Type="PpoTrainRoute" Id="3" ValueRoutePointer="1">
 			<Trace Start="NSH" OnCoursePoints="+103 +107 -109 -111 +113 " Finish="NML3"/>
 			<OperatorSelectors Ends="CHL3 NML3"/>
 			<SignalingDependence Dark="DZH" Stop="DZH" OnMain="DZH" OnMainGreen="DZH" OnSide="DZH" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<CrossroadNotification CrossroadId="1" DelayOpenSignal="32" DelayStartNotification="26" StartNotification="NSHP"/>
 		</TrRoute>
 		<TrRoute Tag="NSH_CHL4" Type="PpoTrainRoute" Id="4" ValueRoutePointer="1">
 			<Trace Start="NSH" OnCoursePoints="+103 +107 -109 -111 -113 -117 +114 " Finish="NML4"/>
 			<OperatorSelectors Ends="CHL4 NML4"/>
 			<SignalingDependence Dark="DZH" Stop="DZH" OnMain="DZH" OnMainGreen="DZH" OnSide="DZH" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<CrossroadNotification CrossroadId="1" DelayOpenSignal="32" DelayStartNotification="26" StartNotification="NSHP"/>
 		</TrRoute>
 		<TrRoute Tag="NSH_NS2" Type="PpoTrainRoute" Id="5" ValueRoutePointer="2">
 			<Trace Start="NSH" OnCoursePoints="+103 -107 +304 -308 +310 +314 " Finish="CHS2"/>
 			<OperatorSelectors Ends="NS2 CHS2"/>
 			<SignalingDependence Dark="DZH" Stop="DZH" OnMain="DZHM" OnMainGreen="DZHM" OnSide="K" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<CrossroadNotification CrossroadId="1" DelayOpenSignal="32" DelayStartNotification="26" StartNotification="NSHP"/>
 		</TrRoute>
 		<TrRoute Tag="NSH_NS1" Type="PpoTrainRoute" Id="6" ValueRoutePointer="2">
 			<Trace Start="NSH" OnCoursePoints="+103 -107 +304 -308 +310 -314 " Finish="CHMS1"/>
 			<OperatorSelectors Ends="NS1 CHMS1"/>
 			<SignalingDependence Dark="DZH" Stop="DZH" OnMain="DZHM" OnMainGreen="K" OnSide="K" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<CrossroadNotification CrossroadId="1" DelayOpenSignal="32" DelayStartNotification="26" StartNotification="NSHP"/>
 		</TrRoute>
 		<TrRoute Tag="NSH_NS3" Type="PpoTrainRoute" Id="7" ValueRoutePointer="2">
 			<Trace Start="NSH" OnCoursePoints="+103 -107 +304 -308 -310 -312 +316 +320 " Finish="CHS3"/>
 			<OperatorSelectors Ends="NS3 CHS3"/>
 			<SignalingDependence Dark="DZH" Stop="DZH" OnMain="K" OnMainGreen="DZHM" OnSide="DZHM" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<CrossroadNotification CrossroadId="1" DelayOpenSignal="32" DelayStartNotification="26" StartNotification="NSHP"/>
 		</TrRoute>
 		<TrRoute Tag="NSH_NS4" Type="PpoTrainRoute" Id="8" ValueRoutePointer="2">
 			<Trace Start="NSH" OnCoursePoints="+103 -107 +304 -308 -310 -312 +316 -320 -322 -324 " Finish="CHS4"/>
 			<OperatorSelectors Ends="NS4 CHS4"/>
 			<SignalingDependence Dark="DZH" Stop="DZH" OnMain="DZHM" OnMainGreen="DZHM" OnSide="K" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<CrossroadNotification CrossroadId="1" DelayOpenSignal="32" DelayStartNotification="26" StartNotification="NSHP"/>
 		</TrRoute>
 		<TrRoute Tag="NSH_NS5" Type="PpoTrainRoute" Id="9" ValueRoutePointer="2">
 			<Trace Start="NSH" OnCoursePoints="+103 -107 +304 -308 -310 -312 -316 -318 +324 +322 -326 +328 " Finish="CHS5"/>
 			<OperatorSelectors Ends="NS5 CHS5"/>
 			<SignalingDependence Dark="DZH" Stop="DZH" OnMain="DZH" OnMainGreen="DZH" OnSide="K" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<CrossroadNotification CrossroadId="1" DelayOpenSignal="32" DelayStartNotification="26" StartNotification="NSHP"/>
 		</TrRoute>
 		<TrRoute Tag="NSH_NS6" Type="PpoTrainRoute" Id="10" ValueRoutePointer="2">
 			<Trace Start="NSH" OnCoursePoints="+103 -107 +304 -308 -310 -312 -316 -318 +324 +322 -326 -328 +330 " Finish="CHS6"/>
 			<OperatorSelectors Ends="NS6 CHS6"/>
 			<SignalingDependence Dark="DZH" Stop="DZH" OnMain="DZH" OnMainGreen="DZH" OnSide="K" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<CrossroadNotification CrossroadId="1" DelayOpenSignal="32" DelayStartNotification="26" StartNotification="NSHP"/>
 		</TrRoute>
 		<TrRoute Tag="NSH_NS7" Type="PpoTrainRoute" Id="11" ValueRoutePointer="2">
 			<Trace Start="NSH" OnCoursePoints="+103 -107 +304 -308 -310 -312 -316 -318 +324 +322 -326 -328 -330 " Finish="CHS7"/>
 			<OperatorSelectors Ends="NS7 CHS7"/>
 			<SignalingDependence Dark="DZH" Stop="DZH" OnMain="DZH" OnMainGreen="DZH" OnSide="K" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<CrossroadNotification CrossroadId="1" DelayOpenSignal="32" DelayStartNotification="26" StartNotification="NSHP"/>
 		</TrRoute>
 		<TrRoute Tag="NSH_NS8" Type="PpoTrainRoute" Id="12" ValueRoutePointer="2">
 			<Trace Start="NSH" OnCoursePoints="+103 -107 +304 -308 -310 -312 -316 -318 +324 +322 +326 +332 " Finish="CHS8"/>
 			<OperatorSelectors Ends="NS8 CHS8"/>
 			<SignalingDependence Dark="DZH" Stop="DZH" OnMain="DZH" OnMainGreen="DZH" OnSide="K" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<CrossroadNotification CrossroadId="1" DelayOpenSignal="32" DelayStartNotification="26" StartNotification="NSHP"/>
 		</TrRoute>
 		<TrRoute Tag="NSH_NS4_V4" Type="PpoTrainRoute" Id="423" ValueRoutePointer="2">
 			<Trace Start="NSH" OnCoursePoints="+103 -107 +304 -308 -310 -312 -316 -318 -324 +322 " Finish="CHS4" Variants="V4"/>
