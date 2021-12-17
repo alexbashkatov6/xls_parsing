@@ -5,6 +5,7 @@
 			<Trace Start="NSH" OnCoursePoints="+103 +107 +109 +115 " Finish="NML2"/>
 			<OperatorSelectors Ends="CHL2 NML2"/>
 			<SignalingDependence Dark="DZH" Stop="DZH" OnMain="DZHM" OnMainGreen="DZHM" OnSide="DZHM" OnMainALSO="K" OnMainGrALSO="K" OnSideALSO="K"/>
+			<CrossroadNotification CrossroadId="1" DelayOpenSignal="32" DelayStartNotification="26" StartNotification="NSHP"/>
 		</TrRoute>
 		<TrRoute Tag="NSH_CHL1" Type="PpoTrainRoute" Id="2" ValueRoutePointer="1">
 			<Trace Start="NSH" OnCoursePoints="+103 +107 +109 -115 " Finish="NML1"/>
